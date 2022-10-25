@@ -1,1 +1,1 @@
-FROM node:14-apline
+FROM node:14-alpine
