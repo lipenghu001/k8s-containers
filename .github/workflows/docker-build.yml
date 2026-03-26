@@ -7,7 +7,7 @@ on:
 env:
   REGISTRY: ${{ secrets.ALIYUN_REGISTRY }}
   NAMESPACE: ${{ secrets.ALIYUN_NAMESPACE }}
-  IMAGE_NAME: node # 请将这里改成你的镜像名称
+  IMAGE_NAME: rabbitmq # 请将这里改成你的镜像名称
 
 jobs:
   build-and-push:
@@ -35,8 +35,8 @@ jobs:
       - name: Build and push AMD64 image
         uses: docker/build-push-action@v5
         with:
-          context: node
-          dockerfile: node/Dockerfile
+          context: rabbitmq
+          dockerfile: rabbitmq/Dockerfile
           # 指定构建平台为 linux/amd64
           platforms: linux/amd64
           push: true
